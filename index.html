@@ -1,198 +1,337 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV - Irwin Alfredo Rodríguez Giménez</title>
-  <style>
-      body {
-          font-family: 'Arial', sans-serif;
-          max-width: 800px;
-          margin: 0 auto;
-          padding: 20px;
-          line-height: 1.6;
-          color: #333;
-          background-color: #f9f9f9;
-      }
-      .container {
-          background: white;
-          padding: 30px;
-          border-radius: 10px;
-          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      }
-      .header {
-          text-align: center;
-          border-bottom: 3px solid #2c3e50;
-          padding-bottom: 20px;
-          margin-bottom: 30px;
-      }
-      .name {
-          font-size: 28px;
-          font-weight: bold;
-          color: #2c3e50;
-          margin-bottom: 5px;
-      }
-      .title {
-          font-size: 18px;
-          color: #7f8c8d;
-          font-style: italic;
-      }
-      .contact-info {
-          display: flex;
-          justify-content: space-around;
-          flex-wrap: wrap;
-          margin-top: 15px;
-          font-size: 14px;
-      }
-      .contact-item {
-          margin: 5px;
-      }
-      .section {
-          margin-bottom: 25px;
-      }
-      .section-title {
-          font-size: 20px;
-          font-weight: bold;
-          color: #2c3e50;
-          border-bottom: 2px solid #3498db;
-          padding-bottom: 5px;
-          margin-bottom: 15px;
-      }
-      .profile-text {
-          background-color: #ecf0f1;
-          padding: 15px;
-          border-radius: 5px;
-          font-style: italic;
-          text-align: justify;
-      }
-      .experience-item {
-          margin-bottom: 15px;
-      }
-      .experience-title {
-          font-weight: bold;
-          color: #2c3e50;
-      }
-      .experience-details {
-          color: #7f8c8d;
-          font-size: 14px;
-      }
-      .skills-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 10px;
-      }
-      .skill-item {
-          background-color: #3498db;
-          color: white;
-          padding: 8px 12px;
-          border-radius: 20px;
-          text-align: center;
-          font-size: 14px;
-      }
-      .highlight {
-          background-color: #e74c3c;
-      }
-      .youtube-link {
-          background-color: #e74c3c;
-          color: white;
-          padding: 10px 15px;
-          border-radius: 5px;
-          text-decoration: none;
-          display: inline-block;
-          margin-top: 10px;
-      }
-      .youtube-link:hover {
-          background-color: #c0392b;
-      }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Irwin Alfredo Rodríguez Giménez</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95em;
+        }
+        
+        .contact-item .icon {
+            width: 18px;
+            height: 18px;
+            opacity: 0.8;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            font-weight: 600;
+        }
+        
+        .profile-text {
+            font-size: 1.05em;
+            text-align: justify;
+            color: #555;
+            line-height: 1.7;
+            font-style: italic;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .experience-item h3, .education-item h3 {
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+        }
+        
+        .experience-item .meta, .education-item .meta {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+        
+        .experience-item ul {
+            margin-left: 20px;
+            color: #555;
+        }
+        
+        .experience-item li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .buttons-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn-youtube {
+            background: #ff4444;
+            color: white;
+        }
+        
+        .btn-youtube:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 68, 68, 0.4);
+        }
+        
+        .btn-audio {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .btn-audio:hover {
+            background: #219a52;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .skill-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+        
+        .skill-item h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .skill-item p {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .buttons-container {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-      <div class="header">
-          <div class="name">IRWIN ALFREDO RODRÍGUEZ GIMÉNEZ</div>
-          <div class="title">Actor de Doblaje</div>
-          <div class="contact-info">
-              <div class="contact-item">📱 685 382 565</div>
-              <div class="contact-item">📍 Toledo, España</div>
-              <div class="contact-item">🎂 39 años (15/11/1985)</div>
-          </div>
-      </div>
-
-      <div class="section">
-          <div class="section-title">PERFIL PROFESIONAL</div>
-          <div class="profile-text">
-              Actor de doblaje recién graduado con sólida formación en técnicas de interpretación vocal y sincronización. 
-              Profesional con experiencia en análisis y atención al detalle, cualidades que aporto al mundo del doblaje. 
-              Comprometido con el aprendizaje continuo y la excelencia artística, con demostraciones prácticas disponibles 
-              en plataformas digitales.
-          </div>
-      </div>
-
-      <div class="section">
-          <div class="section-title">FORMACIÓN ESPECIALIZADA</div>
-          <div class="experience-item">
-              <div class="experience-title">Curso Profesional de Doblaje</div>
-              <div class="experience-details">Escuela Audiovisual MasterD • 2024</div>
-              <ul style="margin-top: 8px;">
-                  <li>Técnicas de interpretación vocal y caracterización de personajes</li>
-                  <li>Sincronización labial y timing</li>
-                  <li>Manejo profesional de cabina de grabación</li>
-                  <li>Análisis de guiones y adaptación de diálogos</li>
-              </ul>
-          </div>
-      </div>
-
-      <div class="section">
-          <div class="section-title">EXPERIENCIA PRÁCTICA</div>
-          <div class="experience-item">
-              <div class="experience-title">Canal de YouTube - Prácticas de Doblaje</div>
-              <div class="experience-details">Contenido propio • 2024 - Presente</div>
-              <p>Desarrollo y publicación regular de ejercicios prácticos de doblaje, demostrando técnicas aprendidas y evolución artística.</p>
-              <a href="https://www.youtube.com/@irwin4790" class="youtube-link" target="_blank">
-                  🎬 Ver Portfolio en YouTube
-              </a>
-          </div>
-      </div>
-
-      <div class="section">
-          <div class="section-title">HABILIDADES TÉCNICAS</div>
-          <div class="skills-grid">
-              <div class="skill-item">Interpretación Vocal</div>
-              <div class="skill-item">Sincronización Labial</div>
-              <div class="skill-item">Caracterización</div>
-              <div class="skill-item">Registro Vocal Medio</div>
-              <div class="skill-item">Análisis de Personajes</div>
-              <div class="skill-item">Grabación en Estudio</div>
-          </div>
-      </div>
-
-      <div class="section">
-          <div class="section-title">IDIOMAS</div>
-          <div class="skills-grid">
-              <div class="skill-item highlight">Español - Nativo</div>
-              <div class="skill-item highlight">Inglés - Avanzado</div>
-          </div>
-      </div>
-
-      <div class="section">
-          <div class="section-title">EXPERIENCIA PROFESIONAL COMPLEMENTARIA</div>
-          <div class="experience-item">
-              <div class="experience-title">Analista Programador</div>
-              <div class="experience-details">Experiencia profesional en análisis, resolución de problemas y atención al detalle</div>
-              <p>Habilidades transferibles: precisión, capacidad analítica, trabajo bajo presión y cumplimiento de deadlines.</p>
-          </div>
-      </div>
-
-      <div class="section">
-          <div class="section-title">INFORMACIÓN ADICIONAL</div>
-          <ul>
-              <li>✅ Disponibilidad inmediata</li>
-              <li>✅ Flexibilidad horaria</li>
-              <li>✅ Vehículo propio para desplazamientos</li>
-              <li>✅ Experiencia trabajando en equipo</li>
-              <li>✅ Compromiso con la calidad y puntualidad</li>
-          </ul>
-      </div>
-  </div>
+    <div class="container">
+        <div class="header">
+            <h1>IRWIN ALFREDO RODRÍGUEZ GIMÉNEZ</h1>
+            <div class="subtitle">Actor de Doblaje</div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="icon">📱</span>
+                    <span>685 382 565</span>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    <span>Toledo, España</span>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">🎂</span>
+                    <span>39 años (15/11/1985)</span>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">🌎</span>
+                    <span>Venezolano - Latino</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>PERFIL PROFESIONAL</h2>
+                <p class="profile-text">
+                    Actor de doblaje venezolano recién graduado, establecido en España con sólida formación en técnicas de interpretación vocal y sincronización. Aunque nuevo en el sector, aporto dedicación, análisis detallado y compromiso con el aprendizaje continuo. Mi experiencia latina me permite ofrecer versatilidad vocal: puedo doblar tanto en castellano peninsular como mantener mi acento natural latino según las necesidades del proyecto. Busco crecer profesionalmente en los estudios de Madrid y Barcelona, con demostraciones prácticas disponibles en plataformas digitales.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2>FORMACIÓN ESPECIALIZADA</h2>
+                
+                <div class="education-item">
+                    <h3>Curso Profesional de Doblaje</h3>
+                    <div class="meta">Escuela Audiovisual MasterD • 2024</div>
+                    <ul>
+                        <li>Técnicas de interpretación vocal y caracterización de personajes</li>
+                        <li>Sincronización labial y timing</li>
+                        <li>Análisis de guiones y adaptación de diálogos</li>
+                        <li>Configuración y manejo de home studio para grabaciones caseras</li>
+                    </ul>
+                </div>
+                
+                <div class="education-item">
+                    <h3>Academia de Teatro</h3>
+                    <div class="meta">Formación continua • 2024 - Presente</div>
+                    <p>Estudios teatrales complementarios para reforzar técnicas de interpretación y transferir esa experiencia expresiva a través de la voz en el doblaje.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>EXPERIENCIA PRÁCTICA</h2>
+                
+                <div class="experience-item">
+                    <h3>Canal de YouTube - Prácticas de Doblaje</h3>
+                    <div class="meta">Contenido propio • 2024 - Presente</div>
+                    <p>Desarrollo y publicación regular de ejercicios prácticos de doblaje, demostrando técnicas aprendidas y progreso artístico. Grabaciones realizadas en castellano peninsular desde mi home studio.</p>
+                    
+                    <div class="buttons-container">
+                        <audio controls style="margin-right: 15px;">
+                            <source src="voice-sample-001.wav" type="audio/wav">
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
+                        <a href="https://www.youtube.com/@irwin4790" target="_blank" class="btn btn-youtube">
+                            🎬 Ver Portfolio en YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>HABILIDADES TÉCNICAS</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h4>Interpretación Vocal</h4>
+                        <p>Caracterización de personajes y registro medio</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Sincronización</h4>
+                        <p>Timing y ajuste labial</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Home Studio</h4>
+                        <p>Grabación y edición básica</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Análisis de Texto</h4>
+                        <p>Adaptación y comprensión de guiones</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>IDIOMAS</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h4>Español</h4>
+                        <p>Nativo (Castellano y Latino)</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Inglés</h4>
+                        <p>Nivel Intermedio</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Chino Mandarín</h4>
+                        <p>Nivel Intermedio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
